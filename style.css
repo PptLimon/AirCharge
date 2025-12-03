@@ -513,21 +513,24 @@ nav a.active {
   color: var(--brand-dark);
 }
 
-.btn-primary {
+.btn-primary, .cta-btn {
   display: inline-block;
   margin-top: 20px;
-  background: var(--brand);
-  padding: 12px 22px;
-  border-radius: var(--radius);
-  border: 1px solid var(--brand-dark);
+  background: #f5e83b;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: 1px solid #d4c632;
   text-decoration: none;
-  color: var(--text);
+  color: #111;
   font-weight: 600;
   box-shadow: var(--shadow);
+  transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-  background: var(--brand-dark);
+.btn-primary:hover, .cta-btn:hover {
+  background: #d4c632;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 /* MOBILE HERO */
