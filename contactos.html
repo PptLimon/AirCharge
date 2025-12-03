@@ -1,45 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contactos – Air Charge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contactos — Air Charge</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1 class="logo">Air Charge</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="produtos.html">Produtos</a></li>
-      <li><a href="sobre.html">Sobre Nós</a></li>
-      <li><a href="contactos.html" class="active">Contactos</a></li>
-    </ul>
-  </nav>
+<header class="header">
+  <div class="container nav">
+    <div class="logo">Air Charge</div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="blog.html">Blog</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="contactos.html" class="active">Contactos</a>
+      <a href="app.html" class="cta-btn">App</a>
+    </nav>
+  </div>
 </header>
 
-<section class="content">
-  <h2>Contacta-nos</h2>
-  <p>Tens dúvidas ou queres saber mais sobre os nossos produtos? Entra em contacto connosco.</p>
-
+<section class="contact">
+  <h1>Contacta-nos</h1>
   <form class="contact-form">
-    <label>Nome</label>
-    <input type="text" required>
-
-    <label>Email</label>
-    <input type="email" required>
-
-    <label>Mensagem</label>
-    <textarea rows="5" required></textarea>
-
-    <button type="submit" class="btn">Enviar Mensagem</button>
+    <input type="text" placeholder="Nome" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Mensagem" rows="5"></textarea>
+    <button type="submit" class="btn-primary">Enviar</button>
   </form>
 </section>
 
 <footer>
-  <p>© 2025 Air Charge | Tecnologia limpa e sustentável</p>
+  <p>© 2025 Air Charge. Todos os direitos reservados.</p>
 </footer>
 
 </body>
