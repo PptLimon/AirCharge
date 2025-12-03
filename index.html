@@ -1,279 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Air Charge — Carregamento sem fios e à distância</title>
-  <meta name="description" content="Air Charge permite carregar vários dispositivos sem cabos nem contacto físico. Área de carregamento à distância, segura e simples." />
-  <meta name="theme-color" content="#0ea5e9" />
-  <meta property="og:title" content="Air Charge — Carregamento sem fios e à distância" />
-  <meta property="og:description" content="Crie uma área de carregamento que alimenta telemóveis, earbuds, relógios e tablets sem fios e em movimento." />
-  <meta property="og:type" content="product" />
-  <meta property="og:image" content="assets/aircharge-hero.jpg" />
-  <link rel="preload" as="image" href="assets/aircharge-hero.jpg" />
-  <style>
-    :root{
-      --bg:#1e200b;      /* fundo escuro elegante */
-      --card:#2a2a0f;     /* bloco */
-      --muted:#b5b894;    /* texto secundário */
-      --text:#eff0e2;     /* texto principal */
-      --brand:#ebee22;    /* ciano */
-      --brand2:#f7fa60;   /* azul */
-      --accent:#fffff0;   /* luz */
-      --radius:18px;
-      --shadow: 0 20px 45px rgba(0,0,0,.35), 0 6px 14px rgba(0,0,0,.25);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text); background: radial-gradient(1000px 600px at 70% -10%, rgba(34,211,238,.15), transparent 60%), linear-gradient(180deg, #020617 0%, #0b1220 100%);}    
-    a{color:var(--brand); text-decoration:none}
-    img{max-width:100%; display:block}
-
-    .container{max-width:1200px; margin:0 auto; padding:24px}
-    header{position:sticky; top:0; backdrop-filter:saturate(1.3) blur(10px); background:rgba(21, 23, 2, 0.55); border-bottom:1px solid rgba(181, 184, 148, 0.1); z-index:30}
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:12px}
-    .logo{width:42px; height:42px; border-radius:12px; background:linear-gradient(135deg, var(--brand), var(--brand2)); display:flex; align-items:center; justify-content:center; font-weight:800; color:#0b1220}
-    .nav a.link{color:var(--muted); font-weight:600; font-size:14px; padding:8px 10px; border-radius:10px}
-    .nav a.link:hover{color:var(--text); background:rgba(182, 184, 148, 0.1)}
-    .btn{appearance:none; border:0; padding:10px 16px; border-radius:12px; font-weight:700; cursor:pointer}
-    .btn.primary{background:linear-gradient(135deg, var(--brand), var(--brand2)); color:#181704; box-shadow:var(--shadow)}
-    .btn.ghost{background:transparent; color:var(--text); border:1px solid rgba(181, 184, 148, 0.25)}
-
-    .hero{display:grid; grid-template-columns:1fr; gap:28px; align-items:center; padding:42px 0}
-    @media(min-width:980px){ .hero{grid-template-columns:1.1fr .9fr} }
-    .pill{display:inline-flex; gap:8px; align-items:center; font-size:12px; color:#1c200b; background:linear-gradient(135deg, #effca5, #f8febf); padding:6px 10px; border-radius:999px}
-    h1{font-size: clamp(28px, 5vw, 48px); line-height:1.1; margin:8px 0 12px}
-    p.lead{color:var(--muted); font-size: clamp(14px, 1.8vw, 18px)}
-    .card{background:linear-gradient(180deg, rgba(148,163,184,.08), rgba(174, 184, 148, 0.04)); border:1px solid rgba(181, 184, 148, 0.15); border-radius:var(--radius); box-shadow:var(--shadow)}
-    .card.pad{padding:20px}
-
-    .grid{display:grid; grid-template-columns:1fr; gap:18px}
-    @media(min-width:900px){ .grid.two{grid-template-columns:1fr 1fr} .grid.three{grid-template-columns:repeat(3,1fr)} }
-
-    .feature{display:flex; gap:12px; align-items:flex-start}
-    .icon{width:30px; height:30px; border-radius:999px; background:rgba(34,211,238,.15); color:#eaf967; display:flex; align-items:center; justify-content:center; font-weight:900; flex:0 0 30px}
-
-    section{scroll-margin-top:80px}
-    .section-title{font-size:22px; margin:0 0 8px}
-    .muted{color:var(--muted)}
-
-    .specs li{margin:8px 0}
-
-    .compare{border-collapse:separate; border-spacing:0; width:100%; font-size:14px}
-    .compare th,.compare td{padding:12px 14px; border-bottom:1px solid rgba(148,163,184,.15)}
-    .compare th{color:#f3fca5; text-align:left}
-    .compare tr:hover td{background:rgba(182, 184, 148, 0.06)}
-
-    .cta{display:flex; flex-direction:column; gap:12px; align-items:flex-start; padding:26px; margin-top:18px}
-    .cta .price{font-size:32px; font-weight:900}
-
-    footer{margin-top:48px; border-top:1px solid rgba(182, 184, 148, 0.15)}
-    footer .row{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 0; color:var(--muted); font-size:14px; flex-wrap:wrap}
-
-    /* Modal */
-    .backdrop{position:fixed; inset:0; background:rgba(0,0,0,.55); display:none; align-items:center; justify-content:center; padding:16px; z-index:50}
-    .modal{background:#0b1220; border:1px solid rgba(181, 184, 148, 0.25); border-radius:16px; padding:22px; width:min(520px, 100%); box-shadow:var(--shadow)}
-
-    /* badges */
-    .badges{display:flex; gap:8px; flex-wrap:wrap}
-    .badge{font-size:12px; color:#343a02; background:#fcfaa5; border:1px solid #f9f667; border-radius:999px; padding:6px 10px}
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Air Charge",
-    "description": "Carregamento sem fios e à distância para múltiplos dispositivos.",
-    "image": ["assets/aircharge-hero.jpg"],
-    "brand": {"@type":"Brand","name":"Air Charge"},
-    "offers": {"@type":"Offer","priceCurrency":"EUR","price":"129","availability":"https://schema.org/InStock"}
-  }
-  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">AC</div>
-        <div>
-          <strong>Air Charge</strong><div class="muted" style="font-size:12px">Carregamento sem fios e à distância</div>
-        </div>
-      </div>
-      <nav style="display:flex; gap:6px; flex-wrap:wrap">
-        <a class="link" href="#como-funciona">Como funciona</a>
-        <a class="link" href="#caracteristicas">Características</a>
-        <a class="link" href="#especificacoes">Especificações</a>
-        <a class="link" href="#comparacao">Comparação</a>
-        <a class="link" href="#faq">FAQ</a>
-        <button class="btn primary" onclick="document.getElementById('comprar').scrollIntoView({behavior:'smooth'})">Comprar</button>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <span class="pill">Novo • Tecnologia exclusiva</span>
-        <h1>Crie uma <em style="color:var(--brand)">área de carregamento</em> em casa ou no escritório</h1>
-        <p class="lead">O <strong>Air Charge</strong> carrega múltiplos dispositivos <u>sem cabos</u> e <u>sem contacto físico</u>. Funciona mesmo em movimento, dentro da zona de alcance.</p>
-        <div class="grid two" style="margin-top:16px">
-          <button class="btn primary" onclick="openCart(1)">Comprar — €129</button>
-          <a class="btn ghost" href="#como-funciona">Ver como funciona</a>
-        </div>
-        <div class="badges" style="margin-top:14px">
-          <span class="badge">Alcance até 1.5 m</span>
-          <span class="badge">Multi‑dispositivo</span>
-          <span class="badge">USB‑C PD</span>
-          <span class="badge">Auto‑stop</span>
-        </div>
-      </div>
-      <figure class="card" style="overflow:hidden">
-        <img src="images/product_1.jpg" alt="Air Charge a carregar um smartphone e earbuds sem fios"/>
-      </figure>
-    </section>
+<header class="header">
+  <div class="container nav">
+    <div class="logo">Air Charge</div>
 
-    <!-- COMO FUNCIONA -->
-    <section id="como-funciona" class="grid two">
-      <div class="card pad">
-        <h2 class="section-title">Como funciona</h2>
-        <p class="muted">Transfere energia através de <strong>ondas de rádio/campos eletromagnéticos</strong>, criando uma <strong>zona de carregamento</strong>. Os dispositivos registados com um <em>receiver</em> compatível passam a carregar automaticamente quando entram nesta área.</p>
-        <ul class="muted" style="margin-top:10px">
-          <li>Sem contacto direto com bases ou cabos.</li>
-          <li>Carrega em movimento, enquanto te deslocas.</li>
-          <li>Gestão inteligente para vários dispositivos em simultâneo.</li>
-        </ul>
-      </div>
-      <div class="grid three">
-        <div class="card pad feature"><div class="icon">✓</div><div><strong>Sem fios, sem atrito</strong><div class="muted">Coloca os teus equipamentos na área de alcance e deixa o Air Charge tratar do resto.</div></div></div>
-        <div class="card pad feature"><div class="icon">⇄</div><div><strong>Funciona em movimento</strong><div class="muted">O carregamento mantém‑se enquanto te deslocas dentro da zona.</div></div></div>
-        <div class="card pad feature"><div class="icon">∞</div><div><strong>Vários ao mesmo tempo</strong><div class="muted">Telemóvel, earbuds, relógio e mais — tudo a carregar em paralelo.*</div></div></div>
-      </div>
-    </section>
+    <!-- NAV DESKTOP -->
+    <nav class="desktop-nav">
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="blog.html">Blog</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="contactos.html">Contactos</a>
+      <a href="app.html" class="cta-btn">App</a>
+    </nav>
 
-    <!-- CARACTERÍSTICAS -->
-    <section id="caracteristicas" class="grid two">
-      <div class="card pad">
-        <h2 class="section-title">Principais características</h2>
-        <ul class="specs">
-          <li>Transmissão por ondas de rádio/campos eletromagnéticos.</li>
-          <li>Compatível com múltiplas categorias: smartphones, earbuds, smartwatches, tablets (via receptor).</li>
-          <li>Instalação <em>plug‑and‑play</em>: tomada 100–240 V ou USB‑C PD.</li>
-          <li>Segurança: deteção de objetos estranhos e auto‑desligar.</li>
-          <li>Design discreto, silencioso, para casa e escritório.</li>
-        </ul>
-        <small class="muted">* A potência é gerida de forma inteligente por dispositivo.</small>
-      </div>
-      <div class="card pad">
-        <h2 class="section-title">Para quem é</h2>
-        <p class="muted">Jovens 16–35, estudantes e profissionais que usam diariamente telemóvel, earbuds e relógio. Espaços com movimento (secretárias partilhadas, salas de estudo, receções) beneficiam da experiência sem cabos e visual futurista.</p>
-      </div>
-    </section>
-
-    <!-- ESPECIFICAÇÕES -->
-    <section id="especificacoes" class="grid two">
-      <div class="card pad">
-        <h2 class="section-title">Especificações técnicas</h2>
-        <ul class="specs">
-          <li>Alcance: até 1.5 m (linha de visão; varia com obstáculos).</li>
-          <li>Saída: até 15 W por dispositivo (gestão multi‑dispositivo).</li>
-          <li>Entrada: 100–240 V AC / 20 V USB‑C PD.</li>
-          <li>Segurança: CE / RoHS <em>(substituir pelo certificado final)</em>.</li>
-          <li>Dimensões: 180 × 80 × 25 mm • Peso: 320 g.</li>
-        </ul>
-      </div>
-      <div class="card pad">
-        <h2 class="section-title">Na caixa</h2>
-        <ul class="specs">
-          <li>Air Charge (1×)</li>
-          <li>Adaptador USB‑C PD (1×)</li>
-          <li>Manual rápido</li>
-        </ul>
-        <div class="badges" style="margin-top:8px">
-          <span class="badge">Garantia 2 anos</span>
-          <span class="badge">Envio 48–72 h</span>
-          <span class="badge">Suporte PT/EN/ES</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPARAÇÃO -->
-    <section id="comparacao" class="card pad">
-      <h2 class="section-title">Comparação de soluções</h2>
-      <table class="compare">
-        <thead>
-          <tr><th>Critério</th><th>Cabos</th><th>Indução (base)</th><th>Magnético (MagSafe)</th><th><strong>Air Charge</strong></th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Contacto físico</td><td>Necessário</td><td>Necessário</td><td>Necessário</td><td><strong>Não</strong></td></tr>
-          <tr><td>Mobilidade durante carga</td><td>Baixa</td><td>Não</td><td>Limitada</td><td><strong>Sim</strong></td></tr>
-          <tr><td>Múltiplos dispositivos</td><td>Vários cabos</td><td>1 por base</td><td>1 por dock</td><td><strong>Sim</strong></td></tr>
-          <tr><td>Experiência</td><td>Tradicional</td><td>Estática</td><td>Estável</td><td><strong>Futurista</strong></td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- TESTEMUNHOS + FAQ -->
-    <section class="grid two" id="faq">
-      <div class="card pad">
-        <h2 class="section-title">O que dizem</h2>
-        <div class="grid">
-          <blockquote class="muted">“Deixar o telefone na secretária e vê‑lo a carregar sem tocar em nada é mágico.” — Ana M.</blockquote>
-          <blockquote class="muted">“Perfeito para earbuds — chegam sempre a 100%.” — Pedro R.</blockquote>
-        </div>
-      </div>
-      <div class="card pad">
-        <h2 class="section-title">Perguntas frequentes</h2>
-        <details><summary>É seguro para quem usa marcapasso?</summary><p class="muted">O Air Charge reduz emissões junto de implantes; consulta sempre o teu médico e o fabricante do dispositivo.</p></details>
-        <details><summary>Funciona através de paredes?</summary><p class="muted">Materiais densos atenuam o campo; paredes finas podem permitir carregamento parcial com menor eficiência.</p></details>
-        <details><summary>Preciso de receptor específico?</summary><p class="muted">Alguns equipamentos requerem um pequeno <em>receiver</em> compatível (incluído ou vendido em separado).</p></details>
-      </div>
-    </section>
-
-    <!-- CTA FINAL / COMPRA -->
-    <section id="comprar" class="card cta">
-      <h2 class="section-title">Pronto para simplificar o teu dia?</h2>
-      <div class="muted">Encomenda hoje e recebe em 48–72 h (PT/ES/FR).</div>
-      <div class="price">€129</div>
-      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
-        <label for="qty" class="muted">Qtd</label>
-        <input id="qty" type="number" min="1" value="1" style="width:90px; padding:10px; border-radius:10px; border:1px solid rgba(148,163,184,.25); background:#0b1220; color:var(--text)"/>
-        <button class="btn primary" onclick="openCart(document.getElementById('qty').value)">Comprar agora</button>
-        <a class="btn ghost" href="#especificacoes">Ver especificações</a>
-      </div>
-      <small class="muted">Antes de usar, lê o manual. Alcance e potência variam com distância, alinhamento e obstáculos.</small>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container row">
-      <div>© <span id="year"></span> Air Charge</div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap">
-        <a href="#" class="muted">Privacidade</a>
-        <a href="#" class="muted">Termos</a>
-        <a href="#" class="muted">Contacto</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Modal Carrinho (simulado) -->
-  <div class="backdrop" id="cart">
-    <div class="modal">
-      <h3 style="margin:0 0 8px">Carrinho</h3>
-      <p class="muted" id="cartLine">1 × Air Charge — €129</p>
-      <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
-        <button class="btn primary" onclick="checkout()">Finalizar compra</button>
-        <button class="btn ghost" onclick="closeCart()">Continuar a comprar</button>
-      </div>
+    <!-- ÍCONE MENU MOBILE -->
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
     </div>
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function openCart(q){ const qty = Math.max(1, parseInt(q || 1, 10)); document.getElementById('cartLine').textContent = `${qty} × Air Charge — €129`; document.getElementById('cart').style.display = 'flex'; }
-    function closeCart(){ document.getElementById('cart').style.display = 'none'; }
-    function checkout(){ closeCart(); alert('Checkout simulado — integraremos Stripe/PayPal quando quiseres.'); }
-  </script>
+  <!-- OVERLAY MOBILE -->
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+  <!-- MENU MOBILE LATERAL -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Início</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="blog.html">Blog</a>
+    <a href="sobre.html">Sobre Nós</a>
+    <a href="contactos.html">Contactos</a>
+    <a href="app.html">App</a>
+  </div>
+</header>
+
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Carrega dispositivos <span>sem fios</span> e <span>sem contacto</span></h1>
+    <p>O futuro do carregamento chegou. O Air Charge permite carregar smartphones, earbuds e smartwatches até 1,5 metros de distância.</p>
+    <a href="produtos.html" class="btn-primary">Comprar Agora</a>
+  </div>
+  <div class="hero-img">
+    <img src="images/produto.png" alt="Air Charge">
+  </div>
+</section>
+
+<section class="features">
+  <h2>Porque escolher o Air Charge?</h2>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>Carregamento à distância</h3>
+      <p>Até 150 cm de alcance, sem contacto físico nem bases.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Design minimalista</h3>
+      <p>Perfeito para secretárias, salas de estudo e espaços modernos.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Multi-dispositivo</h3>
+      <p>Carrega telemóvel, earbuds e smartwatch em simultâneo.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Segurança total</h3>
+      <p>Deteção automática de objetos e gestão inteligente de energia.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Pronto para o futuro?</h2>
+  <p>Encomenda hoje o Air Charge e recebe em 48–72h.</p>
+  <a href="produtos.html" class="btn-primary">Comprar Agora</a>
+</section>
+
+<footer>
+  <p>© 2025 Air Charge. Todos os direitos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
