@@ -2,16 +2,19 @@
 <html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre Nós — Air Charge</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <div class="logo">Air Charge</div>
-    <nav>
+    <a href="index.html" class="logo">Air Charge</a>
+    
+    <!-- Menu Desktop -->
+    <nav class="desktop-nav">
       <a href="index.html">Início</a>
       <a href="produtos.html">Produtos</a>
       <a href="blog.html">Blog</a>
@@ -19,18 +22,116 @@
       <a href="contactos.html">Contactos</a>
       <a href="app.html" class="cta-btn">App</a>
     </nav>
+
+    <!-- Ícone do Menu Mobile -->
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
   </div>
 </header>
 
-<section class="about">
-  <h1>Sobre a Air Charge</h1>
-  <p>A Air Charge nasceu para eliminar cabos e simplificar a tecnologia do dia a dia.</p>
-  <p>Combinamos inovação, design e sustentabilidade para criar a próxima geração de carregamento sem fios.</p>
-  <img src="images/capa.jpg" alt="Air Charge">
-</section>
+<main class="about-page">
+  <section class="page-header">
+    <div class="container">
+      <h1>Sobre a Air Charge</h1>
+      <p>Conheça nossa missão, visão e os valores que nos movem</p>
+    </div>
+  </section>
 
-<footer>
-  <p>© 2025 Air Charge. Todos os direitos reservados.</p>
+  <section class="about-mission">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Nossa Missão</h2>
+          <p>A Air Charge nasceu com um propósito simples mas ambicioso: eliminar cabos e simplificar a tecnologia do dia a dia. Acreditamos que a tecnologia deve ser intuitiva, acessível e sustentável.</p>
+          <p>Combinamos inovação, design e sustentabilidade para criar a próxima geração de soluções de carregamento sem fios, tornando a vida mais fácil para pessoas em todo o mundo.</p>
+        </div>
+        <div class="about-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <h2>Nossos Valores</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">💡</div>
+          <h3>Inovação</h3>
+          <p>Buscamos constantemente novas maneiras de melhorar a experiência de carregamento dos seus dispositivos.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🌱</div>
+          <h3>Sustentabilidade</h3>
+          <p>Comprometidos com um futuro mais limpo através de produtos duráveis e eficientes em energia.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h3>Qualidade</h3>
+          <p>Não fazemos concessões quando se trata da qualidade e segurança dos nossos produtos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2>Conheça Nossa Equipa</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-image">
+          </div>
+          <h3>Huang Wei</h3>
+        </div>
+        <div class="team-member">
+          <div class="member-image">
+          </div>
+          <h3>Simão Tallafer</h3>
+        </div>
+        <div class="team-member">
+          <div class="member-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>Air Charge</h3>
+        <p>O futuro do carregamento sem fios</p>
+      </div>
+      <div class="footer-links">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contactos</h4>
+        <p>email@aircharge.pt</p>
+        <p>+351 123 456 789</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Air Charge. Todos os direitos reservados.</p>
+    </div>
+  </div>
 </footer>
+
+<script src="script.js"></script>
 </body>
 </html>

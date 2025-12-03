@@ -1,18 +1,20 @@
-<<<<<<< HEAD:1/blog.html
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — Air Charge</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <div class="logo">Air Charge</div>
-    <nav>
+    <a href="index.html" class="logo">Air Charge</a>
+    
+    <!-- Menu Desktop -->
+    <nav class="desktop-nav">
       <a href="index.html">Início</a>
       <a href="produtos.html">Produtos</a>
       <a href="blog.html" class="active">Blog</a>
@@ -20,78 +22,94 @@
       <a href="contactos.html">Contactos</a>
       <a href="app.html" class="cta-btn">App</a>
     </nav>
+
+    <!-- Ícone do Menu Mobile -->
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
+    </div>
+
+
+    <!-- Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
   </div>
 </header>
 
-<section class="blog-list">
-  <h1>Blog</h1>
+<main class="blog-page">
+  <section class="page-header">
+    <div class="container">
+      <h1>Blog</h1>
+      <p>Fique a par das últimas novidades, dicas e tutoriais sobre tecnologia sem fios</p>
+    </div>
+  </section>
 
-  <article class="blog-card">
-    <img src="images/produto.png">
-    <h2><a href="artigo.html">Carregamento à distância — como funciona?</a></h2>
-    <p>Explicação simples e visual da tecnologia usada pelo Air Charge...</p>
-  </article>
+  <div class="container blog-container">
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-image">
+          <img src="images/produto.png" alt="Carregamento sem fios" loading="lazy">
+          <span class="category-tag">Tecnologia</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="date">3 de Dezembro, 2025</span>
+            <span class="read-time">5 min de leitura</span>
+          </div>
+          <h2><a href="artigo.html">Carregamento à distância — como funciona?</a></h2>
+          <p class="excerpt">Explicação simples e visual da tecnologia usada pelo Air Charge para carregar os seus dispositivos sem fios e à distância.</p>
+          <a href="artigo.html" class="read-more">Ler mais <span>→</span></a>
+        </div>
+      </article>
 
-  <article class="blog-card">
-    <img src="images/produto.png">
-    <h2><a href="artigo.html">Qi vs MagSafe vs Air Charge</a></h2>
-    <p>Comparação técnica e prática das três tecnologias...</p>
-  </article>
-
-</section>
-
-<footer>
-  <p>© 2025 Air Charge. Todos os direitos reservados.</p>
-</footer>
-
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blog — Air Charge</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="header">
-  <div class="container nav">
-    <div class="logo">Air Charge</div>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="produtos.html">Produtos</a>
-      <a href="blog.html" class="active">Blog</a>
-      <a href="sobre.html">Sobre Nós</a>
-      <a href="contactos.html">Contactos</a>
-      <a href="app.html" class="cta-btn">App</a>
-    </nav>
+      <article class="blog-card">
+        <div class="blog-image">
+          <img src="images/514c82a2-31a5-495b-a6de-d04dcfc2fa2d.png" alt="Comparação de tecnologias" loading="lazy">
+          <span class="category-tag">Comparação</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="date">15 de Novembro, 2025</span>
+            <span class="read-time">6 min de leitura</span>
+          </div>
+          <h2><a href="artigo2.html">Qi vs MagSafe vs Air Charge</a></h2>
+          <p class="excerpt">Comparação técnica e prática das três principais tecnologias de carregamento sem fios disponíveis no mercado.</p>
+          <a href="artigo2.html" class="read-more">Ler mais <span>→</span></a>
+        </div>
+      </article>
+    </div>
   </div>
-</header>
+</main>
 
-<section class="blog-list">
-  <h1>Blog</h1>
-
-  <article class="blog-card">
-    <img src="images/blog1.jpg">
-    <h2><a href="artigo.html">Carregamento à distância — como funciona?</a></h2>
-    <p>Explicação simples e visual da tecnologia usada pelo Air Charge...</p>
-  </article>
-
-  <article class="blog-card">
-    <img src="images/blog2.jpg">
-    <h2><a href="artigo.html">Qi vs MagSafe vs Air Charge</a></h2>
-    <p>Comparação técnica e prática das três tecnologias...</p>
-  </article>
-
-</section>
-
-<footer>
-  <p>© 2025 Air Charge. Todos os direitos reservados.</p>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>Air Charge</h3>
+        <p>O futuro do carregamento sem fios</p>
+      </div>
+      <div class="footer-links">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contactos</h4>
+        <p>email@aircharge.pt</p>
+        <p>+351 123 456 789</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Air Charge. Todos os direitos reservados.</p>
+    </div>
+  </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
->>>>>>> 762681c9f74166efb3014dc70a77bfaf3408063e:blog.html

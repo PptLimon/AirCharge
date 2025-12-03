@@ -2,15 +2,87 @@
 <html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Artigo — Air Charge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qi vs MagSafe vs Air Charge — Air Charge</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .article {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      line-height: 1.8;
+      color: #333;
+    }
+    .article h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #000;
+    }
+    .article h2 {
+      margin-top: 40px;
+      color: #000;
+    }
+    .article p {
+      margin-bottom: 20px;
+    }
+    .article-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 30px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .article ul {
+      margin: 20px 0;
+      padding-left: 25px;
+    }
+    .article li {
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .article li:before {
+      content: "•";
+      color: var(--brand);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .article strong {
+      color: #000;
+    }
+    .btn-primary {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: var(--brand);
+      color: #000;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      .article {
+        padding: 20px 15px;
+      }
+      .article h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
+
 <header class="header">
   <div class="container nav">
-    <div class="logo">Air Charge</div>
-    <nav>
+    <a href="index.html" class="logo">Air Charge</a>
+    <nav class="desktop-nav">
       <a href="index.html">Início</a>
       <a href="produtos.html">Produtos</a>
       <a href="blog.html">Blog</a>
@@ -18,24 +90,154 @@
       <a href="contactos.html">Contactos</a>
       <a href="app.html" class="cta-btn">App</a>
     </nav>
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
+    </div>
+    <div class="overlay" onclick="toggleMenu()"></div>
   </div>
 </header>
 
-<section class="article">
-  <h1>Carregamento à distância — como funciona?</h1>
-  <p><strong>Publicado em 2025</strong></p>
-  <img src="images/blog1.jpg" class="article-img">
+<main class="container">
+  <article class="article">
+    <header>
+      <h1>Qi vs MagSafe vs Air Charge — Qual é a melhor tecnologia de carregamento?</h1>
+      <p class="article-meta">Publicado em 15 de Novembro, 2025 • 6 min de leitura</p>
+      <img src="images/514c82a2-31a5-495b-a6de-d04dcfc2fa2d.png" alt="Comparação de tecnologias de carregamento" class="article-img">
+    </header>
 
-  <p>O carregamento sem fios à distância utiliza campos eletromagnéticos para transferir energia...</p>
+    <section>
+      <p>O ecossistema de carregamento móvel tem evoluído de forma acelerada nos últimos anos. Se antes dependíamos exclusivamente de cabos, hoje temos múltiplas tecnologias sem fios que simplificam o dia a dia. Entre as mais populares encontram-se <strong>Qi</strong>, <strong>MagSafe</strong> e, mais recentemente, o <strong>Air Charge</strong>, que introduz o conceito de carregamento à distância.</p>
+      
+      <p>Neste artigo analisamos as diferenças entre estas três tecnologias para perceber qual oferece maior conveniência, eficiência e liberdade ao utilizador.</p>
+    </section>
 
-  <p>Esta tecnologia permite carregar dispositivos sem contacto físico com bases ou suportes...</p>
+    <section>
+      <h2>1. Carregamento Qi — o padrão universal</h2>
+      <p>O Qi é, atualmente, o padrão global de carregamento sem fios por indução. Está presente na maioria dos smartphones, earbuds e smartwatches.</p>
+      
+      <p><strong>Como funciona?</strong><br>
+      O dispositivo precisa de estar em contacto direto com a base de carregamento. Bobinas internas alinham-se para permitir a transferência de energia.</p>
 
-  <a href="blog.html" class="btn-primary">Voltar ao blog</a>
-</section>
+      <div class="pros-cons">
+        <div class="pros">
+          <h3>Vantagens</h3>
+          <ul>
+            <li>Compatível com milhares de dispositivos</li>
+            <li>Preço acessível e fácil de encontrar</li>
+            <li>Solução estável e já muito testada</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h3>Limitações</h3>
+          <ul>
+            <li>Necessita de contacto físico — não funciona se o telemóvel estiver deslocado</li>
+            <li>Não permite mobilidade durante o carregamento</li>
+            <li>Aquecimento superior a outras soluções</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <p>© 2025 Air Charge. Todos os direitos reservados.</p>
+    <section>
+      <h2>2. MagSafe — carregamento magnético</h2>
+      <p>Introduzido pela Apple, o MagSafe utiliza ímanes para alinhar automaticamente o iPhone com a base ou acessório de carregamento.</p>
+      
+      <div class="pros-cons">
+        <div class="pros">
+          <h3>Vantagens</h3>
+          <ul>
+            <li>Alinhamento perfeito e estável</li>
+            <li>Maior eficiência energética do que Qi tradicional</li>
+            <li>Compatibilidade com acessórios (suportes, baterias externas, etc.)</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h3>Limitações</h3>
+          <ul>
+            <li>Funciona apenas com iPhones compatíveis</li>
+            <li>Requer contacto físico com o carregador</li>
+            <li>Mobilidade limitada — o dispositivo permanece preso ao acessório</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Air Charge — o próximo passo</h2>
+      <p>O Air Charge introduz uma abordagem completamente diferente: utiliza <strong>campos eletromagnéticos direcionados</strong> para carregar dispositivos a vários centímetros ou metros de distância, sem contacto físico.</p>
+      
+      <div class="pros-cons">
+        <div class="pros">
+          <h3>Vantagens</h3>
+          <ul>
+            <li>Carregamento totalmente sem contacto</li>
+            <li>Permite usar o smartphone enquanto carrega</li>
+            <li>Carregamento multi-dispositivo em simultâneo</li>
+            <li>Ideal para secretárias, salas de estudo e ambientes profissionais</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h3>Limitações</h3>
+          <ul>
+            <li>Necessita de um dispositivo compatível ou de um pequeno recetor</li>
+            <li>A distância pode afetar a potência de carregamento</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Comparação direta</h2>
+      <p>Enquanto Qi e MagSafe continuam dependentes do contacto físico, o Air Charge abre a porta a uma experiência verdadeiramente sem fios. A tecnologia ainda está a evoluir, mas já oferece uma libertação significativa do espaço físico e dos cabos.</p>
+      
+      <h2>Qual é a melhor tecnologia?</h2>
+      <p>Depende da necessidade do utilizador:</p>
+      <ul>
+        <li><strong>Qi</strong>: ideal para quem quer simplicidade e compatibilidade universal.</li>
+        <li><strong>MagSafe</strong>: perfeito para utilizadores Apple que valorizam conveniência e alinhamento automático.</li>
+        <li><strong>Air Charge</strong>: a melhor opção para mobilidade, produtividade e carregamento em movimento.</li>
+      </ul>
+      
+      <p>À medida que a tecnologia evolui, é provável que o carregamento à distância se torne o novo padrão, tal como o Qi se tornou há alguns anos. O Air Charge posiciona-se na linha da frente desta transição.</p>
+    </section>
+
+    <footer class="article-footer">
+      <a href="blog.html" class="btn-primary">← Voltar ao blog</a>
+    </footer>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>Air Charge</h3>
+        <p>O futuro do carregamento sem fios</p>
+      </div>
+      <div class="footer-links">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contactos</h4>
+        <p>email@aircharge.pt</p>
+        <p>+351 123 456 789</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Air Charge. Todos os direitos reservados.</p>
+    </div>
+  </div>
 </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
-

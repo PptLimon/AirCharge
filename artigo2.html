@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carregamento à distância — Air Charge</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .article {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      line-height: 1.8;
+      color: #333;
+    }
+    .article h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #000;
+    }
+    .article h2 {
+      margin-top: 40px;
+      color: #000;
+    }
+    .article p {
+      margin-bottom: 20px;
+    }
+    .article-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 30px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .article ul, .article ol {
+      margin: 20px 0;
+      padding-left: 25px;
+    }
+    .article li {
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .article li:before {
+      content: "•";
+      color: var(--brand);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .article strong {
+      color: #000;
+    }
+    .btn-primary {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: var(--brand);
+      color: #000;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .highlight-box {
+      background: #f8f9fa;
+      border-left: 4px solid var(--brand);
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    @media (max-width: 768px) {
+      .article {
+        padding: 20px 15px;
+      }
+      .article h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="logo">Air Charge</a>
+    <nav class="desktop-nav">
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="blog.html">Blog</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="contactos.html">Contactos</a>
+      <a href="app.html" class="cta-btn">App</a>
+    </nav>
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
+    </div>
+    <div class="overlay" onclick="toggleMenu()"></div>
+  </div>
+</header>
+
+<main class="container">
+  <article class="article">
+    <header>
+      <h1>Carregamento à distância — como funciona a tecnologia do futuro?</h1>
+      <p class="article-meta">Publicado em 3 de Dezembro, 2025 • 8 min de leitura</p>
+      <img src="images/3dac7103-cd86-4a1e-b6ad-d45470765740.png" alt="Carregamento sem fios à distância" class="article-img">
+    </header>
+
+    <section>
+      <p>O carregamento sem fios à distância está a revolucionar a forma como interagimos com a tecnologia no nosso dia a dia. Diferente dos carregadores sem fios tradicionais que exigem contacto físico, esta nova geração permite carregar dispositivos a vários metros de distância.</p>
+      
+      <div class="highlight-box">
+        <p><strong>Em resumo:</strong> O carregamento à distância usa ondas de rádio, ressonância magnética ou laser para transferir energia elétrica sem fios através do ar, eliminando a necessidade de cabos ou superfícies de carregamento.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Como funciona o carregamento à distância?</h2>
+      <p>Existem várias tecnologias que permitem o carregamento sem fios à distância, cada uma com as suas particularidades:</p>
+      
+      <h3>1. Ressonância Magnética</h3>
+      <p>Utiliza bobinas ressonantes que vibram na mesma frequência para transferir energia através de um campo magnético. Pode carregar dispositivos a até vários metros de distância.</p>
+      
+      <h3>2. Radiofrequência (RF)</h3>
+      <p>Converte eletricidade em ondas de rádio que são captadas por um recetor no dispositivo. Ideal para carregamento de baixa potência a curtas distâncias.</p>
+      
+      <h3>3. Laser</h3>
+      <p>Usa feixes de laser para transmitir energia através do ar. Requer linha de visão direta entre o transmissor e o recetor, mas oferece maior eficiência energética.</p>
+    </section>
+
+    <section>
+      <h2>Vantagens do carregamento à distância</h2>
+      <ul>
+        <li><strong>Mobilidade total</strong> — use seu dispositivo livremente enquanto carrega</li>
+        <li><strong>Sem desgaste de portas</strong> — elimina o desgaste das portas de carregamento</li>
+        <li><strong>Ambientes mais limpos</strong> — menos cabos espalhados</li>
+        <li><strong>Carregamento multi-dispositivo</strong> — vários aparelhos ao mesmo tempo</li>
+        <li><strong>Integração em móveis</strong> — carregamento invisível em mesas, mesinhas e outros móveis</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>O futuro do carregamento sem fios</h2>
+      <p>À medida que a tecnologia avança, espera-se que o carregamento à distância se torne mais eficiente e acessível. As próximas gerações prometem:</p>
+      <ul>
+        <li>Maior alcance de carregamento</li>
+        <li>Melhor eficiência energética</li>
+        <li>Integração em espaços públicos</li>
+        <li>Padronização entre fabricantes</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Perguntas frequentes</h2>
+      
+      <h3>É seguro o carregamento à distância?</h3>
+      <p>Sim, as tecnologias atuais são projetadas para serem seguras para uso doméstico, operando dentro de padrões rigorosos de segurança.</p>
+      
+      <h3>Qual a eficiência energética?</h3>
+      <p>As tecnologias mais recentes atingem eficiências superiores a 70%, aproximando-se dos carregadores com fio tradicionais.</p>
+      
+      <h3>Funciona através de paredes?</h3>
+      <p>A maioria das tecnologias atuais funciona melhor em ambientes abertos, mas algumas podem atravessar materiais finos.</p>
+    </section>
+
+    <footer class="article-footer">
+      <a href="blog.html" class="btn-primary">← Voltar ao blog</a>
+    </footer>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>Air Charge</h3>
+        <p>O futuro do carregamento sem fios</p>
+      </div>
+      <div class="footer-links">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contactos</h4>
+        <p>email@aircharge.pt</p>
+        <p>+351 123 456 789</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Air Charge. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

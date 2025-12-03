@@ -2,16 +2,49 @@
 <html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contactos — Air Charge</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 10px;
+      background: var(--brand);
+      color: #000;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <div class="logo">Air Charge</div>
-    <nav>
+    <a href="index.html" class="logo">Air Charge</a>
+    <nav class="desktop-nav">
       <a href="index.html">Início</a>
       <a href="produtos.html">Produtos</a>
       <a href="blog.html">Blog</a>
@@ -19,22 +52,67 @@
       <a href="contactos.html" class="active">Contactos</a>
       <a href="app.html" class="cta-btn">App</a>
     </nav>
+    <div class="mobile-menu-icon" onclick="toggleMenu()">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
+    </div>
+    <div class="overlay" onclick="toggleMenu()"></div>
   </div>
 </header>
 
-<section class="contact">
-  <h1>Contacta-nos</h1>
-  <form class="contact-form">
-    <input type="text" placeholder="Nome" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Mensagem" rows="5"></textarea>
-    <button type="submit" class="btn-primary">Enviar</button>
-  </form>
-</section>
+<main class="contact-page">
+  <section class="page-header">
+    <div class="container">
+      <h1>Contacta-nos</h1>
+      <p>Estamos aqui para ajudar. Envie-nos uma mensagem.</p>
+    </div>
+  </section>
 
-<footer>
-  <p>© 2025 Air Charge. Todos os direitos reservados.</p>
+  <div class="container">
+    <form class="contact-form">
+      <div class="form-group">
+        <input type="text" placeholder="Nome" required>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Mensagem" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="border-radius: 25px;">Enviar Mensagem</button>    </form>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>Air Charge</h3>
+        <p>O futuro do carregamento sem fios</p>
+      </div>
+      <div class="footer-links">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contactos</h4>
+        <p>email@aircharge.pt</p>
+        <p>+351 123 456 789</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Air Charge. Todos os direitos reservados.</p>
+    </div>
+  </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
